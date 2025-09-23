@@ -1,0 +1,21 @@
+# Compiled output
+/dist
+/build
+
+# Dependencies
+/node_modules
+
+# Editor and OS
+.idea/
+.vscode/
+*.suo
+*.user
+*.bak
+*.log
+
+# Environment variables
+.env
+.env*.local
+
+# Misc
+npm-debug.log*
