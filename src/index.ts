@@ -1,20 +1,34 @@
-const name: string = "John Smith"
-const dateOfBirth: string | Date = "1980-01-01"
-const phoneNumber: string | number = "123-456-7890"
-const workPosition: null = null
-const address: undefined = undefined
+const userName: string = 'John Smith'
+const birthDate: string | Date = '1980-01-01'
+const phoneNumber: string | number = '123-456-7890'
+const middleName: string | undefined = undefined
+const lastVisitDate: Date | null = null
 
-const printUserInfo = (
-	userName: string,
-	dateOfBirth: string | Date,
-	phoneNumber: string | number,
-	workPosition: null | undefined
-): string => {
-	return `User Info:
-	Name: ${userName}
-	Date of Birth: ${dateOfBirth}
-	Phone Number: ${phoneNumber}
-	Work Position: ${workPosition}`
+type User = {
+  userName: string
+  birthDate: string | Date
+  phoneNumber: string | number
+  middleName?: string
+  lastVisitDate: Date | null
 }
 
-console.log(printUserInfo(name, dateOfBirth, phoneNumber, workPosition))
+const printUserInfo = (userInfo: User): string => {
+  const { userName, birthDate, phoneNumber, middleName, lastVisitDate } = userInfo
+
+  return `User Info:
+		FirstName: ${userName}
+		Date of Birth: ${birthDate}
+		Phone Number: ${phoneNumber}
+		Middle Name: ${middleName || 'Not provided'}
+		Last Visit Date: ${lastVisitDate || 'Never'}
+	`
+}
+
+const user: User = {
+  userName,
+  birthDate,
+  phoneNumber,
+  lastVisitDate
+}
+
+console.log(printUserInfo(user))
