@@ -18,7 +18,7 @@ function getTasks() {
 }
 
 // Отримання деталей завдання за вказаним id
-function detailTask(id: string | number) {
+function getTaskDetail(id: string | number) {
   const tasks = getTasks()
   const task = tasks.find((task) => task.id === id)
 
@@ -105,7 +105,7 @@ function checkTasksDeadline(id: string | number): string {
 }
 
 // Отримання деталей завдання за вказаним id
-const task = detailTask(2)
+const task = getTaskDetail(2)
 console.log(task)
 
 // Створення нового завдання
